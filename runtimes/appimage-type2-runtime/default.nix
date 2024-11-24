@@ -5,7 +5,7 @@
 , squashfuse
 , zstd
 , zlib
-, lzma
+, xz
 , lz4
 , lzo
 }:
@@ -19,7 +19,7 @@ let
   };
 
   fuse3' = fuse3.overrideAttrs (old: {
-    patches = (old.patches or []) ++ [
+    patches = (old.patches or [ ]) ++ [
       # this doesn't work -- causes fuse: failed to exec fusermount: Permission denied
       # "${src}/patches/libfuse/mount.c.diff"
     ];
@@ -45,7 +45,7 @@ stdenv.mkDerivation {
     squashfuse'
     zstd
     zlib
-    lzma
+    xz
     lz4
     lzo
   ];
