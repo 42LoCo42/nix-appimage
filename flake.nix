@@ -4,11 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }:
@@ -19,7 +14,6 @@
       rec {
         # runtimes are an executable that mount the squashfs part of the appimage and start AppRun
         packages.appimage-runtimes = {
-          appimagecrafters = pkgs.callPackage ./runtimes/appimagecrafters { };
           appimage-type2-runtime = pkgs.callPackage ./runtimes/appimage-type2-runtime { };
         };
 

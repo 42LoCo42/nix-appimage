@@ -61,8 +61,6 @@ Currently supported are:
 
 - `appimage-type2-runtime` (default)
   This is [AppImage/type2-runtime](https://github.com/AppImage/type2-runtime), a static runtime maintained by the official AppImage team.
-- `appimagecrafters`.
-  This is [AppImageCrafers/appimage-runtime](https://github.com/AppImageCrafters/appimage-runtime), a similar static runtime that was the old default for nix-appimage.
 
 AppRuns are included within the flake as `packages.<system>.appimage-appruns.<name>`.
 Currently supported are:
